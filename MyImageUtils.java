@@ -21,6 +21,7 @@ public class MyImageUtils  {
 		Color[][] mirror = MirrorImage(img);
 		Color[][] mirrorsepia = MirrorImage(sepia);
 		Color[][] transposedinverted = FlipImage(MirrorImage(InvertImage(img)));
+			
 		//This allows each image to be added to the Jpannel	
 		utils.addImage(img, "Original");
 		utils.addImage(sepia, "Sepia");
@@ -37,6 +38,7 @@ public class MyImageUtils  {
 		utils.display();
 		}	
 	}
+	//These are the methods used to change the original image
 
 public static Color[][] InvertImage(Color[][] img) {
 	 Color[][] Invert = ImageUtils.cloneArray(img);
