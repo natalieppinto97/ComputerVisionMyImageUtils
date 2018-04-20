@@ -4,13 +4,14 @@ public class MyImageUtils  {
 	
 	public static void main(String[] args) {
 		String filename = null;
+		//This allows users to use the command line to input the file path then creates a new 2D array using the class ImageUtils
 		if(args.length == 1) {
 			filename = args[0];
 	
 		ImageUtils utils = new ImageUtils();
 		Color[][] img = utils.loadImage(filename);
 		
-		
+		//This creates a new 2D array for users to implement the methods listed below
 		Color[][] sepia = SepiaImage(img);
 		Color[][]inverted = InvertImage(img);
 		Color[][] blackwhite = BlackWhiteImage(img);
@@ -20,6 +21,7 @@ public class MyImageUtils  {
 		Color[][] mirror = MirrorImage(img);
 		Color[][] mirrorsepia = MirrorImage(sepia);
 		Color[][] transposedinverted = FlipImage(MirrorImage(InvertImage(img)));
+		//This allows each image to be added to the Jpannel	
 		utils.addImage(img, "Original");
 		utils.addImage(sepia, "Sepia");
 		utils.addImage(inverted, "Inverted");
@@ -31,6 +33,7 @@ public class MyImageUtils  {
 		utils.addImage(mirrorsepia, "Mirrored Sepia");
 		utils.addImage(transposedinverted, "Transposed Inverted");
 		
+			//This displays each 2D array listed above
 		utils.display();
 		}	
 	}
